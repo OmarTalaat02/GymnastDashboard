@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "world_champ_mens_all_around")
-public class WorldChampionMensAllAround {
+public class WorldChampMensAllAround {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

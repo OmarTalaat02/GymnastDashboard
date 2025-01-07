@@ -3,7 +3,7 @@
 package com.oit.gymnastdashboard.service;
 
 import com.oit.gymnastdashboard.ResourceNotFoundException;
-import com.oit.gymnastdashboard.entity.WorldChampionMensAllAround;
+import com.oit.gymnastdashboard.entity.WorldChampMensAllAround;
 import com.oit.gymnastdashboard.repository.WorldChampionMensAllAroundRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,24 +17,24 @@ public class WorldChampMensAllAroundService {
     @Autowired
     private WorldChampionMensAllAroundRepository repository;
 
-    public List<WorldChampionMensAllAround> listAll() {
+    public List<WorldChampMensAllAround> listAll() {
         return repository.findAll();
     }
 
-    public WorldChampionMensAllAround get(Long id) {
+    public WorldChampMensAllAround get(Long id) {
         return repository.findById(id).orElseThrow(() ->
                 new ResourceNotFoundException("Gymnast not found with ID " + id));
     }
 
-    public List<WorldChampionMensAllAround> filterByName(String name) {
+    public List<WorldChampMensAllAround> filterByName(String name) {
         return repository.findByNameIgnoreCase(name);
     }
 
-    public List<WorldChampionMensAllAround> filterByNationality(String nationality) {
+    public List<WorldChampMensAllAround> filterByNationality(String nationality) {
         return repository.findByNationalityIgnoreCase(nationality);
     }
 
-    public List<WorldChampionMensAllAround> filterByOverallRank(Integer overallRank) {
+    public List<WorldChampMensAllAround> filterByOverallRank(Integer overallRank) {
         return repository.findByOverallRank(overallRank);
     }
 }

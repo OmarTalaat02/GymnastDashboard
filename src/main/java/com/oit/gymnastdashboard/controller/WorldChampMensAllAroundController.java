@@ -2,7 +2,7 @@
 
 package com.oit.gymnastdashboard.controller;
 
-import com.oit.gymnastdashboard.entity.WorldChampionMensAllAround;
+import com.oit.gymnastdashboard.entity.WorldChampMensAllAround;
 import com.oit.gymnastdashboard.service.WorldChampMensAllAroundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,19 +18,19 @@ public class WorldChampMensAllAroundController {
 
     // Get all gymnasts
     @GetMapping
-    public List<WorldChampionMensAllAround> list() {
+    public List<WorldChampMensAllAround> list() {
         return service.listAll();
     }
 
     // Get gymnast by ID
     @GetMapping("/{id}")
-    public WorldChampionMensAllAround getById(@PathVariable Long id) {
+    public WorldChampMensAllAround getById(@PathVariable Long id) {
         return service.get(id);
     }
 
     // Filter gymnasts by name
     @GetMapping("/filter")
-    public List<WorldChampionMensAllAround> filter(
+    public List<WorldChampMensAllAround> filter(
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String nationality,
             @RequestParam(required = false) Integer overallRank) {
