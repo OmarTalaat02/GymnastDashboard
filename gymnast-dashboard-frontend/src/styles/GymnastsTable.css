@@ -1,0 +1,33 @@
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Table border */
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Column names background color (Header Row) */
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Even rows background color */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Odd rows background color */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect on database entries*/
+tr:hover {
+    background: linear-gradient(to bottom, #dbbcf1, #b5b5f1); /* Blue to Midnight Purple gradient */
+}

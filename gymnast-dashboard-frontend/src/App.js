@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+// Main component: Combines all features of the application.
 
-function App() {
+import React from "react";
+import GymnastsTable from "./components/GymnastsTable"; // Import the GymnastsTable component
+import "./App.css"; // Import global styles for the App
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="app-container">
+        <header className="app-header">
+          <h1>Gymnast Dashboard</h1>
+        </header>
+        <main className="app-main">
+          <GymnastsTable /> {/* Render the GymnastsTable component */}
+        </main>
+      </div>
   );
-}
+};
 
 export default App;
