@@ -1,5 +1,4 @@
 // Represents the database table in Java, Maps the database columns to fields in class using JPA
-
 package com.oit.gymnastdashboard.entity;
 
 import jakarta.persistence.*;

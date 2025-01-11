@@ -1,24 +1,29 @@
 /* App.css */
 
+
+/* Box Around Title */
+.app-header {
+  background: linear-gradient(to bottom, #00009e, #4b0082); /* Blue to Midnight Purple gradient */
+  color: white; /* text color */
+  padding: 10px;
+  text-align: left;
+  -webkit-text-stroke: 1px black; /* Black outline around text */
+  font-family: "Comic Sans MS", serif;
+}
+
 /* Box under title behind columns names(app-main) */
 .app-container {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #4b0082, #00009e); /* Blue to Midnight Purple gradient */
+  background: linear-gradient(to bottom, #4b0082, #4b0082); /* Blue to Midnight Purple gradient */
 }
 
-/* Box Around Title */
-.app-header {
-  background: linear-gradient(to bottom, #00009e, #4b0082); /* Blue to Midnight Purple gradient */
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
+
 
 /* Box around the Coloumn names*/
 .app-main {
-  margin: 20px;
+  margin: 10px;
   padding: 20px;
   background: #ffffff;
   border-radius: 8px;

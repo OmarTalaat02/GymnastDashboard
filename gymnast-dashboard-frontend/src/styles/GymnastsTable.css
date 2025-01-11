@@ -31,3 +31,29 @@ tr:nth-child(odd) {
 tr:hover {
     background: linear-gradient(to bottom, #dbbcf1, #b5b5f1); /* Blue to Midnight Purple gradient */
 }
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-weight: bold;
+}
+

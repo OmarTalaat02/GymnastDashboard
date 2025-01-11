@@ -1,12 +1,13 @@
 // Defines the REST API endpoints that clients can use to interact with the application.
-
 package com.oit.gymnastdashboard.controller;
 
+import com.oit.gymnastdashboard.dto.PaginatedResponse;
 import com.oit.gymnastdashboard.entity.WorldChampMensAllAround;
 import com.oit.gymnastdashboard.service.WorldChampMensAllAroundService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -16,13 +17,22 @@ public class WorldChampMensAllAroundController {
     @Autowired
     private WorldChampMensAllAroundService service;
 
-    // Get all gymnasts
-    @GetMapping
-    public List<WorldChampMensAllAround> list() {
-        return service.listAll();
+    // Endpoint for paged gymnasts
+    @GetMapping("/paged")
+    public PaginatedResponse<WorldChampMensAllAround> getPagedGymnasts(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "12") int size) {
+        Page<WorldChampMensAllAround> pagedGymnasts = service.getPagedGymnasts(PageRequest.of(page, size));
+
+        return new PaginatedResponse<>(
+                pagedGymnasts.getContent(),
+                pagedGymnasts.getNumber(),
+                pagedGymnasts.getTotalPages(),
+                pagedGymnasts.getTotalElements()
+        );
     }
 
-    // Get gymnast by ID
+    // Endpoint for getting a gymnast by ID
     @GetMapping("/{id}")
     public WorldChampMensAllAround getById(@PathVariable Long id) {
         return service.get(id);
@@ -45,5 +55,9 @@ public class WorldChampMensAllAroundController {
         }
     }
 
-
+    // Get all gymnasts
+    @GetMapping
+    public List<WorldChampMensAllAround> list() {
+        return service.listAll();
+    }
 }

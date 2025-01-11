@@ -6,6 +6,8 @@ import com.oit.gymnastdashboard.ResourceNotFoundException;
 import com.oit.gymnastdashboard.entity.WorldChampMensAllAround;
 import com.oit.gymnastdashboard.repository.WorldChampionMensAllAroundRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,5 +39,12 @@ public class WorldChampMensAllAroundService {
     public List<WorldChampMensAllAround> filterByOverallRank(Integer overallRank) {
         return repository.findByOverallRank(overallRank);
     }
+
+    public Page<WorldChampMensAllAround> getPagedGymnasts(Pageable pageable) {
+        return repository.findAll(pageable);
+    }
+
+
+
 }
 

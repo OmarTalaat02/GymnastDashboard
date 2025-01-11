@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8081/api/gymnasts";
+const API_BASE_URL = "http://localhost:8081/api/gymnasts"
 
-// Fetch all gymnasts
-export const fetchGymnasts = () => axios.get(API_BASE_URL);
+const api = axios.create({
+    baseURL: API_BASE_URL, // Base URL for API requests
+});
 
-// Fetch gymnast by ID
-export const fetchGymnastById = (id) => axios.get(`${API_BASE_URL}/${id}`);
+// Function to fetch paginated data
+export const fetchPaginatedGymnasts = (page, size) =>
+    api.get(`/paged?page=${page}&size=${size}`);
