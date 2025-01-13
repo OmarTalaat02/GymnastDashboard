@@ -85,7 +85,7 @@ const GymnastsTable = ({navigateTo}) => {
                 </button>
             </div>
             <div className={"backToLanding"}>
-                <button onClick={() => navigateTo("landing")}>Back to Landing Page</button>
+                <button onClick={() => navigateTo("landing")}>Back to Home</button>
             </div>
         </div>
     );

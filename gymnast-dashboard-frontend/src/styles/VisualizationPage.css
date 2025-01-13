@@ -1,0 +1,31 @@
+.visualization-header {
+  background: linear-gradient(to bottom, #4b0082, #4b0082);
+  color: white;
+  text-align: left;
+}
+
+.visualization-main {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+}
+
+.home-button  button{
+    padding: 10px 10px;
+    background-color: #6200ea; /* Button color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Font weight */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow */
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    text-shadow: black 1px 1px 1px;
+
+}

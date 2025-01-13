@@ -4,6 +4,7 @@ import React from "react";
 import { useState } from "react"; // Import the useState hook
 import GymnastsTable from "./components/GymnastsTable"; // Import the GymnastsTable component
 import LandingPage from "./pages/LandingPage";
+import VisualizationPage from "./pages/VisualizationPage";
 import "./App.css"; // Import global styles for the App
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
             <main className="app-main">
                 {currentPage === "landing" && <LandingPage navigateTo={navigateTo} />}
                 {currentPage === "dataset" && <GymnastsTable navigateTo={navigateTo} />}
+                {currentPage === "visualization" && <VisualizationPage navigateTo={navigateTo} />}
             </main>
         </div>
     );

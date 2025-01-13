@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./../styles/LandingPage.css";
+import Statistics from "../components/Statistics";
+import Nationalities from "../components/Nationalities";
 
 const LandingPage = ({ navigateTo }) => {
     const [totalGymnasts, setTotalGymnasts] = useState(0);
@@ -29,26 +31,18 @@ const LandingPage = ({ navigateTo }) => {
     return (
         <div className="landing-page">
             <header className="landing-header">
-                <h1>Welcome to the Gymnast Dashboard</h1>
+                <h2>Welcome to the Gymnastics 2017 Men's World Championship Dashboard</h2>
             </header>
             <main className="landing-main">
                 <section className="statistics">
                     <h2>Statistics</h2>
-                    <p>Total Gymnasts: {totalGymnasts}</p>
-                    <div>
-                        <h3>Gymnasts by Nationality:</h3>
-                        <ul>
-                            {nationalities.map((entry, index) => (
-                                <li key={index}>
-                                    {entry.nationality}: {entry.count}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    <Statistics totalGymnasts={totalGymnasts / 6} />
+                    <Nationalities nationalities={nationalities} />
                 </section>
                 <section className="navigation">
                     <h2>Navigation</h2>
                     <button onClick={() => navigateTo("dataset")}>Go to Dataset</button>
+                    <button onClick={() => navigateTo("visualization")}>Go to Charts</button>
                 </section>
             </main>
         </div>

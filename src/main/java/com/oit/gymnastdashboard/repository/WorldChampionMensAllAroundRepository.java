@@ -21,7 +21,7 @@ public interface WorldChampionMensAllAroundRepository extends JpaRepository<Worl
     List<WorldChampMensAllAround> findByOverallRank(Integer overallRank);
 
     // Count gymnasts by nationality
-    @Query("SELECT w.nationality, COUNT(w) FROM WorldChampMensAllAround w GROUP BY w.nationality")
+    @Query("SELECT w.nationality, COUNT(DISTINCT w.name) FROM WorldChampMensAllAround w GROUP BY w.nationality")
     List<Object[]> countGymnastsByNationality();
 
     //

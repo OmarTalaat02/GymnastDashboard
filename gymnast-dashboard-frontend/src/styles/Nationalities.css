@@ -1,0 +1,42 @@
+.nationality-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    gap: 10px; /* Adds space between rows and columns */
+    justify-content: left; /* Centers the items in the container */
+
+}
+
+.nationality-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between flag/name and count */
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Sets a fixed width for consistent layout */
+}
+
+.flag-and-name {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the flag and name */
+}
+
+.nationality-flag {
+    width: 30px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.nationality-name {
+    font-weight: bold;
+    color: #000000;
+}
+
+.nationality-count {
+    font-weight: bold;
+    color: #6200ea;
+    margin-left: 10px; /* Adds space between the name and count */
+}

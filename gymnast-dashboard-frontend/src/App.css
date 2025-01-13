@@ -3,12 +3,12 @@
 
 /* Box Around Title */
 .app-header {
-  background: linear-gradient(to bottom, #00009e, #4b0082); /* Blue to Midnight Purple gradient */
+  background: linear-gradient(to bottom, #4b0082, #00009e); /* Blue to Midnight Purple gradient */
   color: white; /* text color */
   padding: 12px;
-  text-align: left;
+  text-align: center;
   -webkit-text-stroke: 1px black; /* Black outline around text */
-  font-family: "Comic Sans MS", serif;
+  font-family: Arial, sans-serif;
 }
 
 /* Box under title behind columns names(app-main) */
@@ -25,7 +25,7 @@
 .app-main {
   margin: 2px;
   padding: 15px;
-  background: #ffffff;
+  background: #4b0082;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
