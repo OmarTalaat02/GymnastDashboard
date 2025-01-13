@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchPaginatedGymnasts } from "../services/api";
 import "./../styles/GymnastsTable.css";
 
-const GymnastsTable = () => {
+const GymnastsTable = ({navigateTo}) => {
     const [gymnasts, setGymnasts] = useState([]); // Data for the current page
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(0); // Current page number
@@ -83,6 +83,9 @@ const GymnastsTable = () => {
                 >
                     Next
                 </button>
+            </div>
+            <div className={"backToLanding"}>
+                <button onClick={() => navigateTo("landing")}>Back to Landing Page</button>
             </div>
         </div>
     );

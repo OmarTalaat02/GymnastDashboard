@@ -3,6 +3,7 @@
 package com.oit.gymnastdashboard.repository;
 import com.oit.gymnastdashboard.entity.WorldChampMensAllAround;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,5 +20,9 @@ public interface WorldChampionMensAllAroundRepository extends JpaRepository<Worl
     // Find by Overall Rank
     List<WorldChampMensAllAround> findByOverallRank(Integer overallRank);
 
+    // Count gymnasts by nationality
+    @Query("SELECT w.nationality, COUNT(w) FROM WorldChampMensAllAround w GROUP BY w.nationality")
+    List<Object[]> countGymnastsByNationality();
 
+    //
 }

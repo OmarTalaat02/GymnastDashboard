@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/gymnasts")
@@ -32,8 +33,16 @@ public class WorldChampMensAllAroundController {
         );
     }
 
+    // Get gymnast by nationality
+    @GetMapping("/stats/gymnasts-by-nationality")
+    public List<Map<String, Object>> getGymnastsByNationality() {
+        System.out.println("Endpoint '/stats/gymnasts-by-nationality' was called.");
+        return service.getGymnastsByNationality();
+    }
+
+
     // Endpoint for getting a gymnast by ID
-    @GetMapping("/{id}")
+    @GetMapping("/{id:\\d+}")
     public WorldChampMensAllAround getById(@PathVariable Long id) {
         return service.get(id);
     }

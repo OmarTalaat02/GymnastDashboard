@@ -10,8 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class WorldChampMensAllAroundService {
@@ -44,7 +43,20 @@ public class WorldChampMensAllAroundService {
         return repository.findAll(pageable);
     }
 
+    public List<Map<String, Object>> getGymnastsByNationality() {
+        List<Object[]> results = repository.countGymnastsByNationality();
+        List<Map<String, Object>> formattedResults = new ArrayList<>();
 
+        for (Object[] result : results) {
+            System.out.println("Nationality: " + result[0] + ", Count: " + result[1]); // Debugging log
 
+            Map<String, Object> map = new HashMap<>();
+            map.put("nationality", result[0]); // Nationality
+            map.put("count", result[1]);      // Count
+            formattedResults.add(map);
+        }
+
+        return formattedResults;
+    }
 }
 

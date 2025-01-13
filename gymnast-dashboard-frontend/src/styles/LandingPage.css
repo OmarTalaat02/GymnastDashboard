@@ -1,0 +1,44 @@
+/* LandingPage.css */
+
+.landing-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #4b0082, #00009e); /* Blue to Midnight Purple gradient */
+    color: white;
+    text-align: center;
+}
+
+/* Title styling */
+.landing-header {
+    padding: 20px;
+    background: linear-gradient(to bottom, #6200ea, #4b0082); /* Blue to Midnight Purple gradient */
+    color: white;
+}
+
+.landing-main {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+.statistics, .updates, .navigation {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #6200ea; /* button color */
+    color: #ffffff; /* Text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
