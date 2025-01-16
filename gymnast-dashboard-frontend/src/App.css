@@ -3,7 +3,7 @@
 
 /* Box Around Title */
 .app-header {
-  background: linear-gradient(to bottom, #4b0082, #00009e); /* Blue to Midnight Purple gradient */
+  background: linear-gradient(to bottom, #4b0082, #000000); /* Blue to Midnight Purple gradient */
   color: white; /* text color */
   padding: 12px;
   text-align: center;
@@ -16,7 +16,7 @@
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #4b0082, #4b0082); /* Blue to Midnight Purple gradient */
+  background: linear-gradient(to bottom, #4b0082, #40036a); /* Blue to Midnight Purple gradient */
 }
 
 

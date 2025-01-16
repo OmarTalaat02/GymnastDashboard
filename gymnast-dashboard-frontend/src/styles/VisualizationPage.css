@@ -1,8 +1,10 @@
 .visualization-header {
   background: linear-gradient(to bottom, #4b0082, #4b0082);
-  color: white;
+  color: #ffffff;
   text-align: left;
 }
+
+
 
 .visualization-main {
     display: flex;
@@ -10,6 +12,7 @@
     margin-top: 10px;
     color: white;
     text-shadow: black 1px 1px 1px;
+    background: linear-gradient(#0b000b, #4b0082);
 }
 
 .home-button  button{

@@ -1,11 +1,17 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8081/api/gymnasts"
+export const fetchSortedGymnasts = (page, size, sortBy, order, apparatus) => {
+    const params = {
+        page,
+        size,
+        sortBy,
+        order,
+    };
 
-const api = axios.create({
-    baseURL: API_BASE_URL, // Base URL for API requests
-});
+    // Include apparatus in the query parameters if it's specified and not "All"
+    if (apparatus && apparatus !== "All") {
+        params.apparatus = apparatus;
+    }
 
-// Function to fetch paginated data
-export const fetchPaginatedGymnasts = (page, size) =>
-    api.get(`/paged?page=${page}&size=${size}`);
+    return axios.get("http://localhost:8081/api/gymnasts/sorted", { params });
+};

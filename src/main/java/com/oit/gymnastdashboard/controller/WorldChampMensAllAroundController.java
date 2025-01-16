@@ -7,6 +7,9 @@ import com.oit.gymnastdashboard.service.WorldChampMensAllAroundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +43,18 @@ public class WorldChampMensAllAroundController {
         return service.getGymnastsByNationality();
     }
 
+    @GetMapping("/visualization/apparatus-performance")
+    public List<Map<String, Object>> getApparatusPerformance() {
+        System.out.println("Endpoint '/visualization/apparatus-performance' was called.");
+        return service.getApparatusPerformance();
+    }
+
+    @GetMapping("/visualization/overall-ranks")
+    public List<Map<String, Object>> getOverallRanks() {
+        System.out.println("Endpoint '/visualization/overall-ranks' was called.");
+        return service.getOverallRanks();
+    }
+
 
     // Endpoint for getting a gymnast by ID
     @GetMapping("/{id:\\d+}")
@@ -63,6 +78,32 @@ public class WorldChampMensAllAroundController {
             return service.listAll();
         }
     }
+
+    @GetMapping("/sorted")
+    public Page<WorldChampMensAllAround> getSortedGymnasts(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "24") int size,
+            @RequestParam(defaultValue = "default") String sortBy,
+            @RequestParam(defaultValue = "asc") String order,
+            @RequestParam(required = false) String apparatus
+    ) {
+        Pageable pageable;
+        if ("default".equals(sortBy)) {
+            pageable = PageRequest.of(page, size); // Default order
+        } else {
+            Sort.Direction sortDirection = "desc".equalsIgnoreCase(order) ? Sort.Direction.DESC : Sort.Direction.ASC;
+            pageable = PageRequest.of(page, size, Sort.by(sortDirection, sortBy));
+        }
+
+        return service.getFilteredAndSortedGymnasts(apparatus, pageable);
+    }
+
+    @GetMapping("/unique-apparatus")
+    public List<String> getUniqueApparatus() {
+        return service.getUniqueApparatus();
+    }
+
+
 
     // Get all gymnasts
     @GetMapping
